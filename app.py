@@ -1,11 +1,9 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import cloudpickle
 
 # Load the trained model pipeline
-with open("depression_model_pipeline.pkl", "rb") as f:
-    pipeline = cloudpickle.load(f)
+pipeline = joblib.load("model.pkl")  # Match the filename you used in Colab
 
 # Title
 st.title("Student Depression Predictor")
@@ -41,6 +39,8 @@ if st.button("Predict"):
 
     except Exception as e:
         st.error(f"An error occurred: {e}")
+
+
 
 
 
