@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load the trained model pipeline
-pipeline = joblib.load("model.pkl")  # Match the filename you used in Colab
+pipeline = joblib.load("depression_model_pipeline.pkl")  # Match the filename you used in Colab
 
 # Title
 st.title("Student Depression Predictor")
@@ -39,6 +39,7 @@ if st.button("Predict"):
 
     except Exception as e:
         st.error(f"An error occurred: {e}")
+
 
 
 
